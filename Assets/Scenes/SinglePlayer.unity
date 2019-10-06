@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2696415f4a32024b836917dc21340d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialImpulse: {x: 5, y: 0, z: 5}
+  initialImpulse: {x: 8, y: 0, z: 5}
 --- !u!54 &1565470239
 Rigidbody:
   m_ObjectHideFlags: 0
