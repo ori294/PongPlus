@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public Vector3 initialImpulse = new Vector3(5, 0, 0);
+    public Vector3 initialImpulse = new Vector3(10, 0, 0);
     //public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
