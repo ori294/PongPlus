@@ -20,10 +20,12 @@ public class PlayerBorder : MonoBehaviour
     void OnCollisionEnter(Collision collider)
     {
         Ball ball = collider.gameObject.GetComponent<Ball>();
+
         if (ball != null) {
             sfx.Play();
             listener.OnPlayerBorderCollisionEnter(player, ball);
-            // ball.transform.position = new Vector3(0f, 1f, 0f);
+            
+            //ball.transform.position = new Vector3(0f, 1f, 0f);
 
             // if (player == ePlayer.Right) score.scorePlayerRed++;
             // else if (player == ePlayer.Left) score.scorePlayerBlue++;

@@ -5,7 +5,8 @@ using UnityEngine;
 public enum ePlayer
 {
     Left,
-    Right
+    Right,
+    Single
 }
 
 public class Player : MonoBehaviour
@@ -32,6 +33,10 @@ public class Player : MonoBehaviour
         else if (side == ePlayer.Right)
         {
             inputSpeed = Input.GetAxisRaw("PlayerRight");
+        } 
+        else if (side == ePlayer.Single) 
+        {
+            inputSpeed = (-1)*Input.GetAxisRaw("Horizontal");
         }
 
         transform.position += new Vector3(0f, 0f, inputSpeed * speed * Time.deltaTime);
