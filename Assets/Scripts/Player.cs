@@ -9,12 +9,20 @@ public enum ePlayer
     Single
 }
 
-public class Player : MonoBehaviour
+public enum PlayerMode
+{
+    human,
+    computer
+}
+
+public class Pedal : MonoBehaviour
 {
     public string playerName;
     public AudioSource sfx;
     public float speed = 15f;
     public ePlayer side;
+    public PlayerMode mode;
+    public Color color;
 
     // Start is called before the first frame update
     void Start()
@@ -33,13 +41,15 @@ public class Player : MonoBehaviour
         else if (side == ePlayer.Right)
         {
             inputSpeed = Input.GetAxisRaw("PlayerRight");
-        } 
-        else if (side == ePlayer.Single) 
+        }
+        else if (side == ePlayer.Single)
         {
-            inputSpeed = (-1)*Input.GetAxisRaw("Horizontal");
+            inputSpeed = (-1) * Input.GetAxisRaw("Horizontal");
         }
 
         transform.position += new Vector3(0f, 0f, inputSpeed * speed * Time.deltaTime);
+
+        // todo: update material color according to color
     }
 
     void OnCollisionEnter(Collision collider)

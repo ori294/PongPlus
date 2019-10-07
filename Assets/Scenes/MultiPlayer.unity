@@ -855,9 +855,10 @@ GameObject:
   - component: {fileID: 1260881977}
   - component: {fileID: 1260881976}
   - component: {fileID: 1260881975}
-  - component: {fileID: 1260881979}
   - component: {fileID: 1260881980}
   - component: {fileID: 1260881981}
+  - component: {fileID: 1260881982}
+  - component: {fileID: 1260881979}
   m_Layer: 0
   m_Name: Player 2 - blue
   m_TagString: Untagged
@@ -947,11 +948,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1260881974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faeedf796922c8b44a4ed3f1cf7151e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f5ed3d346e3f40a68b0a257e3c02543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: Blue
-  sfx: {fileID: 0}
   speed: 15
   side: 1
 --- !u!54 &1260881980
@@ -1066,6 +1065,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1260881982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260881974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c3d96cd6d644121a3b1e7796f60b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx: {fileID: 0}
 --- !u!1 &1278166975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,6 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 732f7b4dd60d44b8783ce0531a68fc32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxScore: 7
 --- !u!1 &1467162108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,10 +1851,11 @@ GameObject:
   - component: {fileID: 2125645881}
   - component: {fileID: 2125645880}
   - component: {fileID: 2125645879}
-  - component: {fileID: 2125645883}
   - component: {fileID: 2125645884}
   - component: {fileID: 2125645885}
   - component: {fileID: 2125645886}
+  - component: {fileID: 2125645887}
+  - component: {fileID: 2125645883}
   m_Layer: 0
   m_Name: Player 1- red
   m_TagString: Untagged
@@ -1931,11 +1945,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2125645878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faeedf796922c8b44a4ed3f1cf7151e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f5ed3d346e3f40a68b0a257e3c02543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: Red
-  sfx: {fileID: 0}
   speed: 15
   side: 0
 --- !u!54 &2125645884
@@ -2069,3 +2081,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2125645887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125645878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c3d96cd6d644121a3b1e7796f60b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx: {fileID: 0}

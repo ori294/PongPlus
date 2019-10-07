@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 732f7b4dd60d44b8783ce0531a68fc32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxScore: 7
 --- !u!4 &165702888
 Transform:
   m_ObjectHideFlags: 0
@@ -587,9 +588,10 @@ GameObject:
   - component: {fileID: 923501344}
   - component: {fileID: 923501343}
   - component: {fileID: 923501342}
-  - component: {fileID: 923501341}
   - component: {fileID: 923501340}
   - component: {fileID: 923501339}
+  - component: {fileID: 923501345}
+  - component: {fileID: 923501341}
   m_Layer: 0
   m_Name: Player 1 - blue
   m_TagString: Untagged
@@ -732,11 +734,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 923501337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faeedf796922c8b44a4ed3f1cf7151e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f5ed3d346e3f40a68b0a257e3c02543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: Blue
-  sfx: {fileID: 0}
   speed: 15
   side: 2
 --- !u!136 &923501342
@@ -798,6 +798,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923501337}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &923501345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923501337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c3d96cd6d644121a3b1e7796f60b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx: {fileID: 0}
 --- !u!1 &1269227238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1116,7 @@ GameObject:
   - component: {fileID: 1572738658}
   - component: {fileID: 1572738657}
   - component: {fileID: 1572738660}
+  - component: {fileID: 1572738665}
   m_Layer: 0
   m_Name: CPU - red
   m_TagString: Untagged
@@ -1248,7 +1262,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572738656}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63635272f791ba14084850964fe4aa6d, type: 3}
   m_Name: 
@@ -1331,6 +1345,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1572738665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572738656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1191d27936cc4d9d87ed7b5efc9eda5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 196354934}
+  speed: 0
+  offSet: {x: 0, y: 0, z: 0}
+  leftBoundry: {fileID: 1313868946}
+  rightBoundry: {fileID: 1687859631}
 --- !u!1 &1665954342
 GameObject:
   m_ObjectHideFlags: 0
