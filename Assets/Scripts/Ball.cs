@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    public int hotHitsThreshold = -1;
     public Vector3 initialImpulse = new Vector3(10, 0, 0);
+
+    private int hits;
+
     //public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -18,5 +22,22 @@ public class Ball : MonoBehaviour
     void Update()
     {
         
+    }
+
+    bool IsHot()
+    {
+        return hits >= hotHitsThreshold;
+    }
+
+    void OnCollisionEnter(Collision collider)
+    {
+        PlayerBorder playerBorder = collider.gameObject.GetComponent<PlayerBorder>();
+        Pedal pedal = collider.gameObject.GetComponent<Pedal>();
+
+        if (playerBorder) {
+            hits = 0; // reset if hits a wall
+        } else if (pedal) {
+            hits++; // increment hits if hits a pedal
+        }
     }
 }

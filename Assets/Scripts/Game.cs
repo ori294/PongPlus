@@ -9,6 +9,8 @@ public class Game : MonoBehaviour, IPlayerBorderListener
     private Score rightScore;
 
     public int maxScore = 7;
+    public string[] players;
+    
     // Start is called before the first frame update
     void Start()
     {

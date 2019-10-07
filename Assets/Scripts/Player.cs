@@ -15,49 +15,10 @@ public enum PlayerMode
     computer
 }
 
-public class Pedal : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public string playerName;
-    public AudioSource sfx;
-    public float speed = 15f;
     public ePlayer side;
     public PlayerMode mode;
     public Color color;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        sfx = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        float inputSpeed = 0f;
-        if (side == ePlayer.Left)
-        {
-            inputSpeed = Input.GetAxisRaw("PlayerLeft");
-        }
-        else if (side == ePlayer.Right)
-        {
-            inputSpeed = Input.GetAxisRaw("PlayerRight");
-        }
-        else if (side == ePlayer.Single)
-        {
-            inputSpeed = (-1) * Input.GetAxisRaw("Horizontal");
-        }
-
-        transform.position += new Vector3(0f, 0f, inputSpeed * speed * Time.deltaTime);
-
-        // todo: update material color according to color
-    }
-
-    void OnCollisionEnter(Collision collider)
-    {
-        Ball ball = collider.gameObject.GetComponent<Ball>();
-        if (ball != null)
-        {
-            sfx.Play();
-        }
-    }
 }

@@ -8,6 +8,7 @@ TagManager:
   - LeftScore
   - RightScore
   - Pedal
+  - Wall
   layers:
   - Default
   - TransparentFX
