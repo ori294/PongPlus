@@ -1,34 +1,45 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PedalMovementComputer : MonoBehaviour
 {
-    public Ball ball;
-    public float speed;
-    public Vector3 offSet;
-    public Transform leftBoundry;
-    public Transform rightBoundry;
-    float x;
-    float y;
+    public float speed = 0.20f; // the lesser the easier the CPU.
+    private Vector3 offSet;
+    private Ball ball;
+    private Vector3 origin;
+    private Vector3 previousPosition;
+    private bool didCollide;
 
     // Start is called before the first frame update
     void Start()
     {
-        x = transform.position.x;
-        y = transform.position.y;
-        speed = 0.25f; //the lesser the easier the CPU.
+        ball = GameObject.FindGameObjectWithTag("Ball").GetComponent<Ball>();
+        origin = transform.position;
         offSet = ball.transform.position - transform.position;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        Vector3 vect = new Vector3(x, y, ball.transform.position.z - offSet.z);
+        Vector3 target = new Vector3(origin.x, origin.y, ball.transform.position.z );
 
-        if ((vect.z <= rightBoundry.position.z - 2.2) && (vect.z >= leftBoundry.position.z + 2.2))
+        float currentSpeed = speed * (float)Math.Pow(1 - Math.Abs(ball.transform.position.x - transform.position.x) / Math.Abs(2 * transform.position.x), 2); // speed grows as the ball is closer to the pedal
+
+        bool goingOppositeDirection = (transform.position - previousPosition).z >= 0 && (target - transform.position).z <= 0
+            || (transform.position - previousPosition).z <= 0 && (target - transform.position).z >= 0; // check if the sign of vector z has changed since last Update
+
+        if (!didCollide || goingOppositeDirection) // has not hit the wall or going in opposite direction
         {
-            transform.position = Vector3.MoveTowards(transform.position, vect, speed);
+            transform.position = Vector3.MoveTowards(transform.position, target, currentSpeed);
+            previousPosition = transform.position;
+            didCollide = false;
         }
+    }
+
+    void OnCollisionEnter(Collision collider)
+    {
+        didCollide = (collider.gameObject.tag == "Wall");
     }
 }

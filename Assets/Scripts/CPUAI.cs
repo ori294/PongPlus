@@ -26,8 +26,9 @@ public class CPUAI : MonoBehaviour
     {
         Vector3 vect = new Vector3(x, y, ball.transform.position.z - offSet.z);
 
-        if (vect.z <= rightBoundry.position.z - 2.2 && vect.z >= leftBoundry.position.z + 2.2) {
+        if (vect.z <= rightBoundry.position.z - 2.2 && vect.z >= leftBoundry.position.z + 2.2)
+        {
             transform.position = Vector3.MoveTowards(transform.position, vect, moveSpeed);
-        } 
+        }
     }
 }
