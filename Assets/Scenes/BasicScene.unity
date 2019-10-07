@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bd29aeff8c34aa8b021ae6e1ff17ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1143501492}
+  player: {fileID: 1663133212}
   score: 0
   scoreText: {fileID: 128315347}
 --- !u!114 &128315347
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 757229209}
   - component: {fileID: 757229208}
   m_Layer: 0
-  m_Name: Border2
+  m_Name: BorderRed
   m_TagString: PlayerBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -699,7 +699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7710ce3aee74c14ca82e9ea3d87059f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1663133212}
+  player: {fileID: 1143501492}
   sfx: {fileID: 0}
 --- !u!82 &757229209
 AudioSource:
@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 1260881979}
   - component: {fileID: 1260881981}
   m_Layer: 0
-  m_Name: Pedal1
+  m_Name: PedalBlue
   m_TagString: Pedal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1534,7 +1534,7 @@ GameObject:
   - component: {fileID: 1792584760}
   - component: {fileID: 1792584759}
   m_Layer: 0
-  m_Name: Border3
+  m_Name: BorderBlue
   m_TagString: PlayerBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1624,7 +1624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7710ce3aee74c14ca82e9ea3d87059f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1143501492}
+  player: {fileID: 1663133212}
   sfx: {fileID: 0}
 --- !u!82 &1792584760
 AudioSource:
@@ -1772,7 +1772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bd29aeff8c34aa8b021ae6e1ff17ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1663133212}
+  player: {fileID: 1143501492}
   score: 0
   scoreText: {fileID: 2079720479}
 --- !u!114 &2079720479
@@ -1924,7 +1924,7 @@ GameObject:
   - component: {fileID: 2125645887}
   - component: {fileID: 2125645888}
   m_Layer: 0
-  m_Name: Pedal0
+  m_Name: PedalRed
   m_TagString: Pedal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
