@@ -26,13 +26,8 @@ public class PedalMovementComputer : MonoBehaviour
     {
         Vector3 vect = new Vector3(x, y, ball.transform.position.z - offSet.z);
 
-        Debug.LogError("Ball position: " + ball.transform.position.z.ToString());
-        Debug.LogError("vect position z = " + vect.z.ToString());
-        Debug.LogError("Right boundry position z = " + rightBoundry.position.z.ToString());
-        Debug.LogError("Left boundry position z = " + leftBoundry.position.z.ToString());
         if ((vect.z <= rightBoundry.position.z - 2.2) && (vect.z >= leftBoundry.position.z + 2.2))
         {
-            Debug.LogError("Move pedal computer");
             transform.position = Vector3.MoveTowards(transform.position, vect, speed);
         }
     }
