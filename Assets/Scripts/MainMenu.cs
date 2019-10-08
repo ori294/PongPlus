@@ -15,9 +15,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MultiPLayer");
     }
 
-    public void GetHighScores() {
-        Debug.Log("Going to HighScores");
-        SceneManager.LoadScene("HighScores");
+    public void GetControls() {
+        Debug.Log("Going to Controls");
+        SceneManager.LoadScene("Controls");
     }
 
     public void ExitGame() {

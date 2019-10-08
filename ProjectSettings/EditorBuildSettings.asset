@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 332723f2a72fa7f43a376b1df22e71b3
   - enabled: 1
-    path: Assets/Scenes/HighScores.unity
+    path: Assets/Scenes/Controls.unity
     guid: 91382fd2a1f055e4b92a1e2e94eab666
   - enabled: 1
     path: Assets/Scenes/MultiPlayer.unity
