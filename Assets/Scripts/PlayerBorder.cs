@@ -7,7 +7,7 @@ public class PlayerBorder : MonoBehaviour
     public IPlayerBorderListener listener;
     // public ePlayer player;
     // public ScoreUI score;
-    public ePlayer player;
+    public Player player;
     
     public AudioSource sfx;
     
@@ -23,17 +23,11 @@ public class PlayerBorder : MonoBehaviour
 
         if (ball != null) {
             sfx.Play();
-            listener.OnPlayerBorderCollisionEnter(player, ball);
-            
-            //ball.transform.position = new Vector3(0f, 1f, 0f);
-
-            // if (player == ePlayer.Right) score.scorePlayerRed++;
-            // else if (player == ePlayer.Left) score.scorePlayerBlue++;
-            
+            listener.OnPlayerBorderCollisionEnter(this, ball);
         }
     }
 }
 
 public interface IPlayerBorderListener {
-    void OnPlayerBorderCollisionEnter(ePlayer player, Ball ball);
+    void OnPlayerBorderCollisionEnter(PlayerBorder border, Ball ball);
 }

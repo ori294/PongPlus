@@ -2,31 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PedalMovement : MonoBehaviour
 {
     public float speed = 15f;
-    public ePlayer side;
+    // public ePlayer side;
+    public string keyboardInputKey;
 
 
     // Update is called once per frame
     void Update()
     {
-        float direction = 0f;
-        if (side == ePlayer.Left)
+        if (keyboardInputKey != null)
         {
-            direction = Input.GetAxisRaw("PlayerLeft");
+            float direction = Input.GetAxisRaw(keyboardInputKey);
+            transform.position += new Vector3(0f, 0f, direction * speed * Time.deltaTime);
         }
-        else if (side == ePlayer.Right)
+        else
         {
-            direction = Input.GetAxisRaw("PlayerRight");
+            Debug.LogError("keyboardInputKey = " + keyboardInputKey);
         }
-        else if (side == ePlayer.Single)
-        {
-            direction = (-1) * Input.GetAxisRaw("Horizontal");
-        }
-
-        transform.position += new Vector3(0f, 0f, direction * speed * Time.deltaTime);
-
         // todo: update material color according to color
     }
 }
