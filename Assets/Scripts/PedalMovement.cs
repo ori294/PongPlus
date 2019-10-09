@@ -7,9 +7,17 @@ public class PedalMovement : MonoBehaviour
 {
     public float speed = 15f;
     // public ePlayer side;
-    public string keyboardInputKey;
+    private string keyboardInputKey;
 
-
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        Pedal pedal = gameObject.GetComponent<Pedal>();
+        keyboardInputKey = pedal.player.keyboardInputKey;
+    }
     // Update is called once per frame
     void Update()
     {

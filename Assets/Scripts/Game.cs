@@ -22,7 +22,7 @@ public class Game : MonoBehaviour, IPlayerBorderListener
             GameObject playerGameObject = GameObject.Find("Player" + i);
 
             Player player = playerGameObject.GetComponent<Player>();
-            player.playerName = "Player" + i;
+            player.playerName = player.playerName != null ? player.playerName : "Player" + i;
 
             GameObject[] pedalGameObjects = GameObject.FindGameObjectsWithTag("Pedal");
             GameObject pedalGameObject = Array.Find(pedalGameObjects, pgo => pgo.GetComponent<Pedal>().player.playerName == player.playerName);
@@ -32,7 +32,7 @@ public class Game : MonoBehaviour, IPlayerBorderListener
                 player.mode = PlayerMode.Human;
                 pedalGameObject.AddComponent<PedalMovement>();
                 PedalMovement pedalMovement = pedalGameObject.GetComponent<PedalMovement>();
-                pedalMovement.keyboardInputKey = player.keyboardInputKey;
+                // pedalMovement.keyboardInputKey = player.keyboardInputKey;
                 Debug.Log("Assign human player #" + i.ToString());
             }
             else
@@ -63,17 +63,23 @@ public class Game : MonoBehaviour, IPlayerBorderListener
     void UpdateScore(Player player)
     {
         GameObject[] scoresGO = GameObject.FindGameObjectsWithTag("Score");
+        
+        if (scoresGO == null) {
+            Debug.LogError("Score GameObject is missing...");
+            return;
+        }
+
         GameObject scoreGO = Array.Find(scoresGO, sgo => sgo.GetComponent<Score>().player.playerName == player.playerName);
         Score score = scoreGO.GetComponent<Score>();
         score.score++;
 
         if (score.score == maxScore)
         {
-            EndGame();
+            EndGame(player);
         }
     }
 
-    void EndGame()
+    void EndGame(Player player)
     {
         // todo!!!!
     }
