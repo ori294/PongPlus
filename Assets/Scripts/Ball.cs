@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour
     public int hotHitsThreshold = -1;
     public Vector3 initialImpulse = new Vector3(10, 0, 0);
     public Player hitter { get; private set; }
+    private Player previousHitter;
     private int hits;
 
     //public Rigidbody rb;
@@ -34,12 +35,13 @@ public class Ball : MonoBehaviour
         PlayerBorder playerBorder = collider.gameObject.GetComponent<PlayerBorder>();
         Pedal pedal = collider.gameObject.GetComponent<Pedal>();
 
-        if (playerBorder) {
-            hits = 0; // reset if hits a wall
-            hitter = playerBorder.player;
-        } else if (pedal) {
-            hits++; // increment hits if hits a pedal
+        if (pedal) {
+            hits++; // increment hits counter if hits a pedal
+            previousHitter = pedal.player != hitter ? hitter : previousHitter; // keep track of the previous hitter (comes handy in case of own goal)
             hitter = pedal.player;
-        }
+        } else if (playerBorder) {
+            hits = 0; // reset if hits a wall
+            hitter = playerBorder.player.playerName != hitter.playerName ? hitter : previousHitter; // in case of own goal the previous hitter should get the points
+        } 
     }
 }

@@ -62,6 +62,7 @@ public class Game : MonoBehaviour, IPlayerBorderListener
 
     void UpdateScore(Player player)
     {
+        Debug.Log("Player " + player.playerName + " scored");
         GameObject[] scoresGO = GameObject.FindGameObjectsWithTag("Score");
         
         if (scoresGO == null || scoresGO.Length == 0) {
@@ -69,7 +70,7 @@ public class Game : MonoBehaviour, IPlayerBorderListener
             return;
         }
 
-        GameObject scoreGO = Array.Find(scoresGO, sgo => sgo.GetComponent<Score>().player.playerName == player.playerName);
+        GameObject scoreGO = Array.Find(scoresGO, sgo => sgo.GetComponent<Score>() && sgo.GetComponent<Score>().player.playerName == player.playerName);
         Score score = scoreGO.GetComponent<Score>();
         score.score++;
 
