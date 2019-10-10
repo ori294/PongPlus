@@ -64,7 +64,7 @@ public class Game : MonoBehaviour, IPlayerBorderListener
     {
         GameObject[] scoresGO = GameObject.FindGameObjectsWithTag("Score");
         
-        if (scoresGO == null) {
+        if (scoresGO == null || scoresGO.Length == 0) {
             Debug.LogError("Score GameObject is missing...");
             return;
         }
