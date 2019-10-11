@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerBorder : MonoBehaviour
 {
-    public IPlayerBorderListener listener;
+    public List<IPlayerBorderListener> listener = new List<IPlayerBorderListener>();
     // public ePlayer player;
     // public ScoreUI score;
     public Player player;
-    
+
     public AudioSource sfx;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +21,18 @@ public class PlayerBorder : MonoBehaviour
     {
         Ball ball = collider.gameObject.GetComponent<Ball>();
 
-        if (ball != null) {
+        if (ball != null)
+        {
             sfx.Play();
-            listener.OnPlayerBorderCollisionEnter(this, ball);
+            foreach (IPlayerBorderListener lstnr in listener)
+            {
+                lstnr.OnPlayerBorderCollisionEnter(this, ball);
+            }
         }
     }
 }
 
-public interface IPlayerBorderListener {
+public interface IPlayerBorderListener
+{
     void OnPlayerBorderCollisionEnter(PlayerBorder border, Ball ball);
 }
