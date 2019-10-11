@@ -122,9 +122,10 @@ GameObject:
   m_Component:
   - component: {fileID: 165702888}
   - component: {fileID: 165702887}
+  - component: {fileID: 165702889}
   m_Layer: 0
   m_Name: Game
-  m_TagString: GameController
+  m_TagString: Game
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,6 +158,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &165702889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165702886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c8f41bc077eeb4f8119653e8ced903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  X: 7
+  Z: 5
+  bonuses:
+  - {fileID: 114460324620358864, guid: a8b54fc1d5e474a48b4e44d6c25f29b8, type: 3}
+  - {fileID: 8103492976113624681, guid: 23f44e6fcc4a6394c93dc770e11932d3, type: 3}
+  - {fileID: 6652050553659263977, guid: 481f5209386d14e429456eabc27a5153, type: 3}
+  - {fileID: 2640528118368067762, guid: 1f26b7781ed8649debbd751a1bcc89f2, type: 3}
+  spawnRate: 5
 --- !u!1 &196354933
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hotHitsThreshold: -1
   initialImpulse: {x: 10, y: 0, z: 0}
+  Flame: {fileID: 0}
+  points: 0
 --- !u!54 &196354935
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -330,9 +353,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bd29aeff8c34aa8b021ae6e1ff17ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1750861458}
   score: 0
   scoreText: {fileID: 386812258}
+  player: {fileID: 1750861458}
 --- !u!114 &386812258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,7 +543,6 @@ MonoBehaviour:
   mode: 1
   color: {r: 1, g: 0, b: 0, a: 0}
   keyboardInputKey: 
-  side: 1
 --- !u!4 &804338108
 Transform:
   m_ObjectHideFlags: 0
@@ -769,6 +791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1750861458}
+  temp: 1
 --- !u!1 &1054532671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,6 +1339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 804338107}
+  temp: 1
 --- !u!1 &1665954342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,7 +1961,6 @@ MonoBehaviour:
   mode: 0
   color: {r: 0, g: 0, b: 1, a: 0}
   keyboardInputKey: Horizontal
-  side: 2
 --- !u!4 &1750861459
 Transform:
   m_ObjectHideFlags: 0
@@ -2002,9 +2025,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bd29aeff8c34aa8b021ae6e1ff17ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 804338107}
   score: 0
   scoreText: {fileID: 1877858925}
+  player: {fileID: 804338107}
 --- !u!114 &1877858925
 MonoBehaviour:
   m_ObjectHideFlags: 0
