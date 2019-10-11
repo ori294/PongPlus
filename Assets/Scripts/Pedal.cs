@@ -22,11 +22,5 @@ public class Pedal : MonoBehaviour
     void OnCollisionEnter(Collision collider)
     {
         Ball ball = collider.gameObject.GetComponent<Ball>();
-
-        if (temp && ball != null && player.playerName == "Red")
-        {
-            ball.ApplyBonus(null);
-            temp= false;
-        }
     }
 }

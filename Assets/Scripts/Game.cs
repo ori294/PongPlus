@@ -58,10 +58,10 @@ public class Game : MonoBehaviour, IPlayerBorderListener
     {
         ball.transform.position = new Vector3(0f, 1f, 0f);
 
-        UpdateScore(ball.hitter, ball.points);
+        IncrementScore(ball.hitter, ball.points);
     }
 
-    void UpdateScore(Player player, int points)
+    public void IncrementScore(Player player, int points)
     {
         Debug.Log("Player " + player.playerName + " scored " + points.ToString() + " points!");
         GameObject[] scoresGO = GameObject.FindGameObjectsWithTag("Score");
@@ -79,11 +79,6 @@ public class Game : MonoBehaviour, IPlayerBorderListener
         {
             EndGame(player);
         }
-    }
-
-    void ApplyBonus(Bonus bonus, IBonusable component)
-    {
-        component.ApplyBonus(bonus);
     }
 
     void EndGame(Player player)

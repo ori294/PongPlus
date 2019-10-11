@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9090149553051495534}
-  - component: {fileID: 9090149553051495529}
+  - component: {fileID: 2640528118368067762}
   - component: {fileID: 9090149553051495528}
   m_Layer: 0
   m_Name: FireBonus
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9090149553051495529
+--- !u!114 &2640528118368067762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,12 +42,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9090149553051495530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29c980151c9bffe43b046abd10f2af18, type: 3}
+  m_Script: {fileID: 11500000, guid: 4aab9698f0d534404bef7de9be7fc38d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 2de4275a880203a47a6da48064918882, type: 3}
-  points: 0
-  type: 1
+  points: 1
+  type: 0
 --- !u!65 &9090149553051495528
 BoxCollider:
   m_ObjectHideFlags: 0

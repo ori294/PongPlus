@@ -11,6 +11,7 @@ TagManager:
   - Score
   - Flame
   - Bonus
+  - Game
   layers:
   - Default
   - TransparentFX

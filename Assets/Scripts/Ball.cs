@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : MonoBehaviour, IBonusable
+public class Ball : MonoBehaviour
 {
     public int hotHitsThreshold = -1;
     public Vector3 initialImpulse = new Vector3(10, 0, 0);
     public Player hitter { get; private set; }
+    public GameObject Flame;
     private int defaultPoints = 1;
     public int points;
     private Player previousHitter;
     private int hits;
     private GameObject flame;
-    public GameObject Flame;
+    private bool inFlames = false;
 
     //public Rigidbody rb;
     // Start is called before the first frame update
@@ -22,8 +23,6 @@ public class Ball : MonoBehaviour, IBonusable
         //rb = GetComponent<Rigidbody>();
         //rb.AddForce(initialImpulse, ForceMode.Impulse);
         GetComponent<Rigidbody>().AddForce(initialImpulse, ForceMode.Impulse);
-
-        SetInFlames();
     }
 
     // Update is called once per frame
@@ -52,37 +51,28 @@ public class Ball : MonoBehaviour, IBonusable
         {
             hits = 0; // reset if hits a wall
             hitter = playerBorder.player.playerName != hitter.playerName ? hitter : previousHitter; // in case of own goal the previous hitter should get the points
+
+            if (inFlames)
+            {
+                ExtinguishFlame();
+            }
         }
     }
 
-    void SetInFlames()
+    public void SetInFlames()
     {
-        Vector3 postition = transform.position + new Vector3(0f, 1.5f, 0f);
-        flame = Instantiate(Flame, transform.position, Quaternion.Euler(-90f, 0f, 0f), gameObject.transform);
-        
+        if (!inFlames)
+        {
+            Vector3 postition = transform.position + new Vector3(0f, 1.5f, 0f);
+            flame = Instantiate(Flame, transform.position, Quaternion.Euler(-90f, 0f, 0f), gameObject.transform);
+            inFlames = true;
+        }
     }
 
     void ExtinguishFlame()
     {
+        Debug.Log("ExtinguishFlame");
         Destroy(flame);
-        
-    }
-
-    public void ApplyBonus(Bonus bonus)
-    {
-        // if (true || bonus.type == BonusType.Fast)
-        // {
-        //     // SetInFlames();
-        //     points = 2; //bonus.points
-        // }
-    }
-
-    public void RemoveBonus(Bonus bonus)
-    {
-        // if (bonus.type == BonusType.Fast)
-        // {
-        //     ExtinguishFlame();
-        // }
-        points = defaultPoints;
+        inFlames = false;
     }
 }

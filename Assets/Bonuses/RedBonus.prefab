@@ -86,7 +86,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7439107394762988433}
-  - component: {fileID: 7439107394762988438}
+  - component: {fileID: 8103492976113624681}
   - component: {fileID: 7439107394762988439}
   m_Layer: 0
   m_Name: RedBonus
@@ -110,7 +110,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7439107394762988438
+--- !u!114 &8103492976113624681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,11 +119,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7439107394762988437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29c980151c9bffe43b046abd10f2af18, type: 3}
+  m_Script: {fileID: 11500000, guid: fae5ea1552249432a8a404889e259223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 2de4275a880203a47a6da48064918882, type: 3}
   points: 1
+  type: 0
 --- !u!65 &7439107394762988439
 BoxCollider:
   m_ObjectHideFlags: 0

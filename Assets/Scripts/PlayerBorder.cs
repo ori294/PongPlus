@@ -5,10 +5,7 @@ using UnityEngine;
 public class PlayerBorder : MonoBehaviour
 {
     public List<IPlayerBorderListener> listener = new List<IPlayerBorderListener>();
-    // public ePlayer player;
-    // public ScoreUI score;
     public Player player;
-
     public AudioSource sfx;
 
     // Start is called before the first frame update
