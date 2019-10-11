@@ -6,6 +6,8 @@ public class Bonus : MonoBehaviour
 {
     public AudioClip audio;
 
+    public int points;
+
     // Update is called once per frame
     void Update()
     {
