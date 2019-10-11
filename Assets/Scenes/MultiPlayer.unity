@@ -344,9 +344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bd29aeff8c34aa8b021ae6e1ff17ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 922464984}
   score: 0
   scoreText: {fileID: 358257680}
+  player: {fileID: 922464984}
 --- !u!114 &358257680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1452,9 +1452,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bd29aeff8c34aa8b021ae6e1ff17ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 316754233}
   score: 0
   scoreText: {fileID: 819832908}
+  player: {fileID: 316754233}
 --- !u!114 &819832908
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum BonusType
+{
+    PointsBonus,
+    FireBonus,
+}
+
 public class Bonus : MonoBehaviour
 {
-    public AudioClip audio;
+    public AudioClip audioClip;
 
-    public int points;
+    public int points = 1;
+    public BonusType type;
 
     // Update is called once per frame
     void Update()
@@ -18,7 +25,7 @@ public class Bonus : MonoBehaviour
     {
         if (other.gameObject.name == "Ball")
         {
-            AudioSource.PlayClipAtPoint(audio, Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(audioClip, Camera.main.transform.position);
             Destroy(gameObject);
         }
     }

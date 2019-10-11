@@ -70,19 +70,19 @@ public class Ball : MonoBehaviour, IBonusable
 
     public void ApplyBonus(Bonus bonus)
     {
-        if (true || bonus.type == BonusType.Fast)
-        {
-            // SetInFlames();
-            points = 2; //bonus.points
-        }
+        // if (true || bonus.type == BonusType.Fast)
+        // {
+        //     // SetInFlames();
+        //     points = 2; //bonus.points
+        // }
     }
 
     public void RemoveBonus(Bonus bonus)
     {
-        if (bonus.type == BonusType.Fast)
-        {
-            ExtinguishFlame();
-        }
+        // if (bonus.type == BonusType.Fast)
+        // {
+        //     ExtinguishFlame();
+        // }
         points = defaultPoints;
     }
 }

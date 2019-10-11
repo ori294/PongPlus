@@ -9,7 +9,7 @@ public class BonusSpawner : MonoBehaviour
     public float Z = 5f;
 
     // Bonuses to instantiate
-    public GameObject bonus1, bonus2, bonus3;
+    public List<GameObject> bonus1;
 
     // Spawn rate per seconds
     public float spawnRate = 5f;
@@ -30,21 +30,21 @@ public class BonusSpawner : MonoBehaviour
             spawnPos = new Vector3(Random.Range (-X, X), 1, Random.Range (-Z, Z));
 
             // Spawns a bonus depending on the random value
-        switch (whatToSpawn)
-        {
-            case 1:
-                Instantiate (bonus1, spawnPos, Quaternion.identity);
-                break;
-            case 2:
-                Instantiate (bonus2, spawnPos, Quaternion.identity);
-                break;
-            case 3:
-                Instantiate (bonus3, spawnPos, Quaternion.identity);
-                break;
-            default:
-            Debug.LogError("No bonus spawned");
-            break;
-        }
+        // switch (whatToSpawn)
+        // {
+        //     case 1:
+        //         Instantiate (bonus1, spawnPos, Quaternion.identity);
+        //         break;
+        //     case 2:
+        //         Instantiate (bonus2, spawnPos, Quaternion.identity);
+        //         break;
+        //     case 3:
+        //         Instantiate (bonus3, spawnPos, Quaternion.identity);
+        //         break;
+        //     default:
+        //     Debug.LogError("No bonus spawned");
+        //     break;
+        // }
 
         // Set the next spawn time
         nextSpawn = Time.time + spawnRate;
