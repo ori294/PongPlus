@@ -9,6 +9,9 @@ TagManager:
   - Wall
   - Ball
   - Score
+  - Flame
+  - Bonus
+  - Game
   layers:
   - Default
   - TransparentFX

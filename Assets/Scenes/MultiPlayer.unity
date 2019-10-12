@@ -280,7 +280,6 @@ MonoBehaviour:
   mode: 0
   color: {r: 0, g: 0, b: 0, a: 0}
   keyboardInputKey: PlayerLeft
-  side: 0
 --- !u!4 &316754234
 Transform:
   m_ObjectHideFlags: 0
@@ -345,9 +344,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bd29aeff8c34aa8b021ae6e1ff17ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   score: 0
   scoreText: {fileID: 358257680}
+  player: {fileID: 922464984}
 --- !u!114 &358257680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,9 +1452,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bd29aeff8c34aa8b021ae6e1ff17ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   score: 0
   scoreText: {fileID: 819832908}
+  player: {fileID: 316754233}
 --- !u!114 &819832908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1531,7 +1530,6 @@ MonoBehaviour:
   mode: 0
   color: {r: 0, g: 0, b: 0, a: 0}
   keyboardInputKey: PlayerRight
-  side: 1
 --- !u!4 &922464985
 Transform:
   m_ObjectHideFlags: 0
@@ -2093,6 +2091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 922464984}
+  temp: 1
 --- !u!1 &1278166975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,9 +2102,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1278166976}
   - component: {fileID: 1278166977}
+  - component: {fileID: 1278166978}
   m_Layer: 0
   m_Name: Game
-  m_TagString: GameController
+  m_TagString: Game
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2138,6 +2138,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxScore: 7
   numPlayers: 2
+--- !u!114 &1278166978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278166975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c8f41bc077eeb4f8119653e8ced903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  X: 7
+  Z: 5
+  bonuses:
+  - {fileID: 114460324620358864, guid: a8b54fc1d5e474a48b4e44d6c25f29b8, type: 3}
+  - {fileID: 8103492976113624681, guid: 23f44e6fcc4a6394c93dc770e11932d3, type: 3}
+  - {fileID: 6652050553659263977, guid: 481f5209386d14e429456eabc27a5153, type: 3}
+  - {fileID: 2640528118368067762, guid: 1f26b7781ed8649debbd751a1bcc89f2, type: 3}
+  spawnRate: 5
 --- !u!1 &1467162108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,6 +2521,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hotHitsThreshold: -1
   initialImpulse: {x: 10, y: 0, z: 0}
+  Flame: {fileID: 2839849935533755745, guid: 9c3cbfaad2e884c65a3239b383e1eede, type: 3}
+  points: 0
 --- !u!54 &1565470239
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2516,7 +2538,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 116
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!135 &1565470240
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3646,3 +3668,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 316754233}
+  temp: 1

@@ -49,7 +49,8 @@ public class Game : MonoBehaviour, IPlayerBorderListener
         foreach (GameObject playerBorderGO in playerBorderGOs)
         {
             PlayerBorder playerBorder = playerBorderGO.GetComponent<PlayerBorder>();
-            playerBorder.listener = this;
+            Debug.Log(playerBorder.listener);
+            playerBorder.listener.Add(this); // can cause memory leak should be replaced with wek reference to this object
         }
     }
 
@@ -57,11 +58,12 @@ public class Game : MonoBehaviour, IPlayerBorderListener
     {
         ball.transform.position = new Vector3(0f, 1f, 0f);
 
-        UpdateScore(ball.hitter);
+        IncrementScore(ball.hitter, ball.points);
     }
 
-    void UpdateScore(Player player)
+    public void IncrementScore(Player player, int points)
     {
+        Debug.Log("Player " + player.playerName + " scored " + points.ToString() + " points!");
         GameObject[] scoresGO = GameObject.FindGameObjectsWithTag("Score");
         
         if (scoresGO == null || scoresGO.Length == 0) {
@@ -69,9 +71,9 @@ public class Game : MonoBehaviour, IPlayerBorderListener
             return;
         }
 
-        GameObject scoreGO = Array.Find(scoresGO, sgo => sgo.GetComponent<Score>().player.playerName == player.playerName);
+        GameObject scoreGO = Array.Find(scoresGO, sgo => sgo.GetComponent<Score>() && sgo.GetComponent<Score>().player.playerName == player.playerName);
         Score score = scoreGO.GetComponent<Score>();
-        score.score++;
+        score.score += points;
 
         if (score.score == maxScore)
         {
@@ -82,17 +84,5 @@ public class Game : MonoBehaviour, IPlayerBorderListener
     void EndGame(Player player)
     {
         // todo!!!!
-    }
-
-    void CreatePlayers(int humanPlayersCount, int computerPlayersCount)
-    {
-        for (int i = 0; i < humanPlayersCount; i++)
-        {
-            // create player
-
-            // assign pedal
-
-            // assign border 
-        }
     }
 }
