@@ -56,8 +56,17 @@ public class Game : MonoBehaviour, IPlayerBorderListener
 
     public void OnPlayerBorderCollisionEnter(PlayerBorder border, Ball ball)
     {
-        ball.transform.position = new Vector3(0f, 1f, 0f);
-
+        ball.transform.position = new Vector3(0f, 1f, 0f); //move the ball to the middle
+        ball.GetComponent<Rigidbody>().velocity = Vector3.zero; //stopping the ball
+        ball.speed = 10; //resetting the requested speed to normal
+        Vector2 randomValues = UnityEngine.Random.insideUnitCircle; //generetes random X Y
+        while (randomValues.y < 0.3)
+        {
+            Debug.Log("rolled " + randomValues.y + " for ball's new z - rerolling");
+            randomValues = UnityEngine.Random.insideUnitCircle; //prevent the ball from moving too vertical and not towards the players
+        }
+        Vector3 startVel = new Vector3(randomValues.x, 0, randomValues.y); //creates a vector3 from the random values (x<-x, y<-0, z<-y)
+        ball.GetComponent<Rigidbody>().AddForce(startVel.normalized * ball.speed, ForceMode.Impulse);
         IncrementScore(ball.hitter, ball.points);
     }
 
