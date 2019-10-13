@@ -6,6 +6,7 @@ public enum BonusType
 {
     PointsBonus,
     FireBonus,
+    ReverseBonus,
 }
 
 public class Bonus : MonoBehaviour

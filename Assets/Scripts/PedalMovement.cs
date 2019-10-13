@@ -8,6 +8,7 @@ public class PedalMovement : MonoBehaviour
     public float speed = 15f;
     // public ePlayer side;
     private string keyboardInputKey;
+    public bool isAxisReversed;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
@@ -17,14 +18,23 @@ public class PedalMovement : MonoBehaviour
     {
         Pedal pedal = gameObject.GetComponent<Pedal>();
         keyboardInputKey = pedal.player.keyboardInputKey;
+        isAxisReversed = false;
     }
     // Update is called once per frame
     void Update()
     {
         if (keyboardInputKey != null)
         {
-            float direction = Input.GetAxisRaw(keyboardInputKey);
-            transform.position += new Vector3(0f, 0f, direction * speed * Time.deltaTime);
+            if (isAxisReversed) {
+                float direction = -Input.GetAxisRaw(keyboardInputKey);
+                transform.position += new Vector3(0f, 0f, direction * speed * Time.deltaTime);
+            } 
+            else 
+            {
+                float direction = Input.GetAxisRaw(keyboardInputKey);
+                transform.position += new Vector3(0f, 0f, direction * speed * Time.deltaTime);
+            }
+            
         }
         else
         {
