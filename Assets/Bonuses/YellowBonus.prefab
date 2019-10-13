@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8244089251334211715}
   - component: {fileID: 6652050553659263977}
   - component: {fileID: 8244089251334211717}
+  - component: {fileID: 114635592102950874}
   m_Layer: 0
   m_Name: YellowBonus
   m_TagString: Bonus
@@ -61,6 +62,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8886262, y: 1.3687184, z: 0.57922703}
   m_Center: {x: -0.0000075860457, y: -0.0047278674, z: 0}
+--- !u!114 &114635592102950874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8244089251334211719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a919c65773e4a50999ac432b195796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 8
 --- !u!1 &8244089252047415990
 GameObject:
   m_ObjectHideFlags: 0

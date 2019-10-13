@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9090149553051495534}
   - component: {fileID: 2640528118368067762}
   - component: {fileID: 9090149553051495528}
+  - component: {fileID: 114886941492120914}
   m_Layer: 0
   m_Name: FireBonus
   m_TagString: Bonus
@@ -61,6 +62,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8886262, y: 1.3687184, z: 0.57922703}
   m_Center: {x: -0.0000075860457, y: -0.0047278674, z: 0}
+--- !u!114 &114886941492120914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090149553051495530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a919c65773e4a50999ac432b195796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 8
 --- !u!1001 &1578711042209458652
 PrefabInstance:
   m_ObjectHideFlags: 0
