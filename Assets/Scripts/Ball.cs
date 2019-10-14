@@ -56,7 +56,7 @@ public class Ball : MonoBehaviour
         else if (playerBorder)
         {
             hits = 0; // reset if hits a wall
-            hitter = playerBorder.player.playerName != hitter.playerName ? hitter : previousHitter; // in case of own goal the previous hitter should get the points
+            hitter = playerBorder.player && hitter && playerBorder.player.playerName != hitter.playerName ? hitter : previousHitter; // in case of own goal the previous hitter should get the points
 
             if (inFlames)
             {
@@ -80,5 +80,6 @@ public class Ball : MonoBehaviour
         Debug.Log("ExtinguishFlame");
         Destroy(flame);
         inFlames = false;
+        points = defaultPoints;
     }
 }
