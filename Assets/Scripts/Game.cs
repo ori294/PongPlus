@@ -75,6 +75,7 @@ public class Game : MonoBehaviour, IPlayerBorderListener
         if (!player)
         {
             Debug.LogError("Player object is missing...");
+            return;
         }
         
         Debug.Log("Player " + player.playerName + " scored " + points.ToString() + " points!");
