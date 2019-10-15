@@ -72,6 +72,12 @@ public class Game : MonoBehaviour, IPlayerBorderListener
 
     public void IncrementScore(Player player, int points)
     {
+        if (!player)
+        {
+            Debug.LogError("Player object is missing...");
+            return;
+        }
+        
         Debug.Log("Player " + player.playerName + " scored " + points.ToString() + " points!");
         GameObject[] scoresGO = GameObject.FindGameObjectsWithTag("Score");
         
