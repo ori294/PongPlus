@@ -1,17 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HpBar : MonoBehaviour
 {
-    public Player player;
+    private float pointsPerHit;
+    private float fill;
+    public Image bar;
 
-    void ReduceHp(int howMany)
+    void Start()
     {
-        if (player.playerName == "Blue")
-        {
-            howMany *= -1;
-        }
-        transform.localScale += new Vector3(0.1f * howMany, 0, 0);
+        fill = 1f;
+        pointsPerHit = 1 / Game.maxScore;
     }
+
+    public void ReduceHP(int howMuch) 
+    {
+        fill = fill - 0.1f * howMuch;
+    }
+
+    void LateUpdate()
+    {
+        bar.fillAmount = fill;
+    }
+
+    public float getFill() => fill;
 }
