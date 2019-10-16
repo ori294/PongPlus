@@ -2,10 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour, IPlayerBorderListener
 {
-    public int maxScore = 7;
+    public static int maxScore = 10;
     public int numPlayers = 2;
 
     // Start is called before the first frame update
@@ -78,6 +79,7 @@ public class Game : MonoBehaviour, IPlayerBorderListener
             return;
         }
         
+        player.GetComponent<HpBar>().ReduceHP(points);
         Debug.Log("Player " + player.playerName + " scored " + points.ToString() + " points!");
         GameObject[] scoresGO = GameObject.FindGameObjectsWithTag("Score");
         
@@ -90,14 +92,25 @@ public class Game : MonoBehaviour, IPlayerBorderListener
         Score score = scoreGO.GetComponent<Score>();
         score.score += points;
 
-        if (score.score == maxScore)
+        if (player.GetComponent<HpBar>().getFill() <= 0)
         {
             EndGame(player);
         }
     }
 
-    void EndGame(Player player)
+    public static void EndGame(Player player)
     {
-        // todo!!!!
+
+        if (player.playerName == "Red") {
+            SceneManager.LoadScene("RedWins");
+        } 
+        else if (player.playerName == "Blue")
+        {
+            SceneManager.LoadScene("BlueWins");
+        }
+        else 
+        {
+            Debug.LogError("Winner not detected!");
+        }
     }
 }
