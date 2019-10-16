@@ -6,15 +6,21 @@ public class Pedal : MonoBehaviour
 {
     public Player player;
 
+    public AudioSource sfx;
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        sfx = gameObject.GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision collider)
     {
-        
+        Ball ball = collider.gameObject.GetComponent<Ball>();
+        if (ball != null)
+        {
+            sfx.Play();
+            
+        }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Game : MonoBehaviour, IPlayerBorderListener
+public class Game : MonoBehaviour
 {
     public static int maxScore = 10;
     public int numPlayers = 2;
@@ -24,8 +24,9 @@ public class Game : MonoBehaviour, IPlayerBorderListener
 
             Player player = playerGameObject.GetComponent<Player>();
             player.playerName = player.playerName != null ? player.playerName : "Player" + i;
+            player.GetComponent<Health>().OnHealthPctChanged += HandleHealthPctChanged;
 
-            GameObject[] pedalGameObjects = GameObject.FindGameObjectsWithTag("Pedal");
+            GameObject[] pedalGameObjects = GameObject.FindGameObjectsWithTag("Paddle");
             GameObject pedalGameObject = Array.Find(pedalGameObjects, pgo => pgo.GetComponent<Pedal>().player.playerName == player.playerName);
 
             if (i < numPlayers)
@@ -43,16 +44,6 @@ public class Game : MonoBehaviour, IPlayerBorderListener
                 Debug.Log("Assign computer player #" + i.ToString());
             }
         }
-        // get scoreboards for all players
-
-
-        GameObject[] playerBorderGOs = GameObject.FindGameObjectsWithTag("PlayerBorder");
-        foreach (GameObject playerBorderGO in playerBorderGOs)
-        {
-            PlayerBorder playerBorder = playerBorderGO.GetComponent<PlayerBorder>();
-            Debug.Log(playerBorder.listener);
-            playerBorder.listener.Add(this); // can cause memory leak should be replaced with wek reference to this object
-        }
     }
 
     public void OnPlayerBorderCollisionEnter(PlayerBorder border, Ball ball)
@@ -68,29 +59,34 @@ public class Game : MonoBehaviour, IPlayerBorderListener
         }
         Vector3 startVel = new Vector3(randomValues.x, 0, randomValues.y); //creates a vector3 from the random values (x<-x, y<-0, z<-y)
         ball.GetComponent<Rigidbody>().AddForce(startVel.normalized * ball.speed, ForceMode.Impulse);
-        IncrementScore(ball.hitter, ball.points);
+        // IncrementScore(ball.hitter, ball.points);
+    }
+
+    public void HandleHealthPctChanged(Player player, float pct)
+    {
+
     }
 
     public void IncrementScore(Player player, int points)
     {
-        if (!player)
-        {
-            Debug.LogError("Player object is missing...");
-            return;
-        }
+        // if (!player)
+        // {
+        //     Debug.LogError("Player object is missing...");
+        //     return;
+        // }
         
-        player.GetComponent<HpBar>().ReduceHP(points);
-        Debug.Log("Player " + player.playerName + " scored " + points.ToString() + " points!");
-        GameObject[] scoresGO = GameObject.FindGameObjectsWithTag("Score");
+        // player.GetComponent<HpBar>().ReduceHP(points);
+        // Debug.Log("Player " + player.playerName + " scored " + points.ToString() + " points!");
+        // GameObject[] scoresGO = GameObject.FindGameObjectsWithTag("Score");
         
-        if (scoresGO == null || scoresGO.Length == 0) {
-            Debug.LogError("Score GameObject is missing...");
-            return;
-        }
+        // if (scoresGO == null || scoresGO.Length == 0) {
+        //     Debug.LogError("Score GameObject is missing...");
+        //     return;
+        // }
 
-        GameObject scoreGO = Array.Find(scoresGO, sgo => sgo.GetComponent<Score>() && sgo.GetComponent<Score>().player.playerName == player.playerName);
-        Score score = scoreGO.GetComponent<Score>();
-        score.score += points;
+        // GameObject scoreGO = Array.Find(scoresGO, sgo => sgo.GetComponent<Score>() && sgo.GetComponent<Score>().player.playerName == player.playerName);
+        // Score score = scoreGO.GetComponent<Score>();
+        // score.score += points;
 
         if (player.GetComponent<HpBar>().getFill() <= 0)
         {

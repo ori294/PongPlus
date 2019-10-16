@@ -1,12 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBorder : MonoBehaviour
 {
-    public List<IPlayerBorderListener> listener = new List<IPlayerBorderListener>();
+    private AudioSource sfx;
     public Player player;
-    public AudioSource sfx;
+    public event Action<Player, Ball> OnBallCollision = delegate { };
 
     // Start is called before the first frame update
     void Start()
@@ -21,15 +22,8 @@ public class PlayerBorder : MonoBehaviour
         if (ball != null)
         {
             sfx.Play();
-            foreach (IPlayerBorderListener lstnr in listener)
-            {
-                lstnr.OnPlayerBorderCollisionEnter(this, ball);
-            }
+
+            OnBallCollision(player, ball);
         }
     }
-}
-
-public interface IPlayerBorderListener
-{
-    void OnPlayerBorderCollisionEnter(PlayerBorder border, Ball ball);
 }

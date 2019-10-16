@@ -38,7 +38,6 @@ public class Bonus : MonoBehaviour
 
     public virtual void OnBonusTriggered(GameObject trigger)
     {
-        Game game = GameObject.FindGameObjectWithTag("Game").GetComponent<Game>();
         Ball ball = trigger.GetComponent<Ball>();
         game.IncrementScore(ball.hitter, points);
     }
