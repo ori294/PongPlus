@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PedalMovementComputer : MonoBehaviour
 {
-    public float speed = 0.20f; // the lesser the easier the CPU.
+    public float speed = 0.19f; // the lesser the easier the CPU.
     private Vector3 offSet;
     private Ball ball;
     private Vector3 origin;
