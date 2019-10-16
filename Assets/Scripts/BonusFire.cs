@@ -6,7 +6,7 @@ public class BonusFire : Bonus
 {
     void Start()
     {
-        points = 2;
+        points = -10;
     }
     public override void OnBonusTriggered(GameObject trigger)
     {

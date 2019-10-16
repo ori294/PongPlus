@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class HpBar : MonoBehaviour
 {
-    private float pointsPerHit;
     private float fill;
     
     public Image bar;
@@ -15,7 +14,6 @@ public class HpBar : MonoBehaviour
     void Start()
     {
         fill = 1f;
-        pointsPerHit = 1 / Game.maxScore;
 
         player.GetComponent<Health>().OnHealthPctChanged += HandleHealthPctChanged;
     }
@@ -27,6 +25,7 @@ public class HpBar : MonoBehaviour
 
     private void HandleHealthPctChanged(Player p, float pct)
     {
+        Debug.Log("Update bar " + bar.ToString() + "with value " + pct.ToString());
         fill = pct;
     }
 

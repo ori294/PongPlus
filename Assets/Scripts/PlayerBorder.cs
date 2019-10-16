@@ -7,7 +7,6 @@ public class PlayerBorder : MonoBehaviour
 {
     private AudioSource sfx;
     public Player player;
-    public event Action<Player, Ball> OnBallCollision = delegate { };
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +22,7 @@ public class PlayerBorder : MonoBehaviour
         {
             sfx.Play();
 
-            OnBallCollision(player, ball);
+            player.GetComponent<Health>().ModifyHealth(ball.points);
         }
     }
 }

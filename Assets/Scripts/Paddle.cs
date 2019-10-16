@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pedal : MonoBehaviour
+public class Paddle : MonoBehaviour
 {
     public Player player;
 

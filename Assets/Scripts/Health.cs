@@ -17,11 +17,13 @@ public class Health : MonoBehaviour
 
     public void ModifyHealth(int amount)
     {
+        Player player = gameObject.GetComponent<Player>();
         currentHealth += amount;
         currentHealth = Math.Max(0, Math.Min(currentHealth, maxHealth));
 
         float currentHealthPct = (float)currentHealth / (float)maxHealth;
-        Player player = gameObject.GetComponent<Player>();
         OnHealthPctChanged(player, currentHealthPct);
+
+        Debug.Log("Player " + player.playerName + ": " + currentHealth.ToString() + "/" + maxHealth.ToString() + "(" + amount.ToString() + ")");
     }
 }
