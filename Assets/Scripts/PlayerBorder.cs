@@ -21,7 +21,7 @@ public class PlayerBorder : MonoBehaviour
         if (ball != null)
         {
             sfx.Play();
-
+            
             player.GetComponent<Health>().ModifyHealth(ball.points);
         }
     }
