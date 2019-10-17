@@ -308,7 +308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 762460362}
-  sfx: {fileID: 0}
 --- !u!82 &373217273
 AudioSource:
   m_ObjectHideFlags: 0
@@ -495,7 +494,7 @@ GameObject:
   - component: {fileID: 415072514}
   m_Layer: 0
   m_Name: PedalRed
-  m_TagString: Pedal
+  m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -513,6 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2061924917}
+  sfx: {fileID: 0}
 --- !u!114 &415072515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,7 +525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c3d96cd6d644121a3b1e7796f60b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfx: {fileID: 0}
 --- !u!82 &415072516
 AudioSource:
   m_ObjectHideFlags: 0
@@ -729,7 +728,7 @@ GameObject:
   - component: {fileID: 667343701}
   m_Layer: 0
   m_Name: PedalBlue
-  m_TagString: Pedal
+  m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,6 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 762460362}
+  sfx: {fileID: 0}
 --- !u!114 &667343702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,7 +759,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c3d96cd6d644121a3b1e7796f60b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfx: {fileID: 0}
 --- !u!82 &667343703
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1068,6 +1067,7 @@ GameObject:
   - component: {fileID: 762460363}
   - component: {fileID: 762460362}
   - component: {fileID: 762460361}
+  - component: {fileID: 762460364}
   m_Layer: 0
   m_Name: Player0
   m_TagString: Player
@@ -1088,6 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1279259463}
+  player: {fileID: 2061924917}
 --- !u!114 &762460362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1118,6 +1119,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &762460364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762460360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b69f4f07bd7d499e8fd3e163d50bddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &776888145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2761,9 +2774,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  hotHitsThreshold: -1
   initialImpulse: {x: 10, y: 0, z: 0}
   Flame: {fileID: 2839849935533755745, guid: 9c3cbfaad2e884c65a3239b383e1eede, type: 3}
+  defaultPoints: -2
   points: 0
 --- !u!54 &1571147218
 Rigidbody:
@@ -3467,7 +3480,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2061924917}
-  sfx: {fileID: 0}
 --- !u!82 &1811870299
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3911,6 +3923,7 @@ GameObject:
   - component: {fileID: 2061924918}
   - component: {fileID: 2061924917}
   - component: {fileID: 2061924916}
+  - component: {fileID: 2061924919}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -3931,6 +3944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1004444830}
+  player: {fileID: 762460362}
 --- !u!114 &2061924917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3961,6 +3975,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2061924919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061924915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b69f4f07bd7d499e8fd3e163d50bddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2063146750
 GameObject:
   m_ObjectHideFlags: 0

@@ -792,6 +792,7 @@ GameObject:
   - component: {fileID: 316754234}
   - component: {fileID: 316754233}
   - component: {fileID: 316754235}
+  - component: {fileID: 316754236}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -842,7 +843,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1907012109}
-  player: {fileID: 0}
+  player: {fileID: 922464984}
+--- !u!114 &316754236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316754232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b69f4f07bd7d499e8fd3e163d50bddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &422891017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,6 +2045,7 @@ GameObject:
   - component: {fileID: 922464985}
   - component: {fileID: 922464984}
   - component: {fileID: 922464986}
+  - component: {fileID: 922464987}
   m_Layer: 0
   m_Name: Player0
   m_TagString: Player
@@ -2082,7 +2096,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 955934253}
-  player: {fileID: 0}
+  player: {fileID: 316754233}
+--- !u!114 &922464987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922464983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b69f4f07bd7d499e8fd3e163d50bddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &955934251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,11 +2512,10 @@ GameObject:
   - component: {fileID: 1260881975}
   - component: {fileID: 1260881980}
   - component: {fileID: 1260881981}
-  - component: {fileID: 1260881982}
   - component: {fileID: 1260881983}
   m_Layer: 0
   m_Name: PedalBlue
-  m_TagString: Pedal
+  m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2680,24 +2705,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1260881982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260881974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1260881983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4494,11 +4501,10 @@ GameObject:
   - component: {fileID: 2125645879}
   - component: {fileID: 2125645884}
   - component: {fileID: 2125645885}
-  - component: {fileID: 2125645887}
   - component: {fileID: 2125645888}
   m_Layer: 0
   m_Name: PedalRed
-  m_TagString: Pedal
+  m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4688,24 +4694,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2125645887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125645878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2125645888
 MonoBehaviour:
   m_ObjectHideFlags: 0

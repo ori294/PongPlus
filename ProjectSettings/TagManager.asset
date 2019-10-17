@@ -12,6 +12,7 @@ TagManager:
   - Flame
   - Bonus
   - Game
+  - Paddle
   layers:
   - Default
   - TransparentFX
