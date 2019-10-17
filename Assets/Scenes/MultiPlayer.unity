@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -791,7 +791,6 @@ GameObject:
   m_Component:
   - component: {fileID: 316754234}
   - component: {fileID: 316754233}
-  - component: {fileID: 316754235}
   - component: {fileID: 316754236}
   m_Layer: 0
   m_Name: Player1
@@ -830,20 +829,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &316754235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316754232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33e583bb372a8104a861249ffd296842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bar: {fileID: 1907012109}
-  player: {fileID: 922464984}
 --- !u!114 &316754236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,6 +966,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422891017}
   m_CullTransparentMesh: 0
+--- !u!1 &469759557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 469759558}
+  - component: {fileID: 469759559}
+  m_Layer: 5
+  m_Name: HealthBar - Blue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &469759558
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469759557}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000215, y: 1.0000212, z: 1.0000215}
+  m_Children:
+  - {fileID: 853743675}
+  m_Father: {fileID: 1203876902}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.000019073486}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &469759559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469759557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33e583bb372a8104a861249ffd296842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 1907012109}
+  player: {fileID: 922464984}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,7 +1638,7 @@ GameObject:
   - component: {fileID: 757229208}
   - component: {fileID: 757229210}
   m_Layer: 0
-  m_Name: Border - red side
+  m_Name: Border - Red
   m_TagString: PlayerBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1831,17 +1867,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853743674}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -120}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -119.99745}
+  m_LocalScale: {x: 0.9999789, y: 0.99997884, z: 0.999979}
   m_Children:
   - {fileID: 1907012108}
-  m_Father: {fileID: 1203876902}
-  m_RootOrder: 5
+  m_Father: {fileID: 469759558}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 101, y: 113}
-  m_SizeDelta: {x: -1026, y: -314}
+  m_AnchoredPosition: {x: 100.997826, y: 112.997604}
+  m_SizeDelta: {x: 538, y: 536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &853743676
 MonoBehaviour:
@@ -2044,7 +2080,6 @@ GameObject:
   m_Component:
   - component: {fileID: 922464985}
   - component: {fileID: 922464984}
-  - component: {fileID: 922464986}
   - component: {fileID: 922464987}
   m_Layer: 0
   m_Name: Player0
@@ -2083,20 +2118,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &922464986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 922464983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33e583bb372a8104a861249ffd296842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bar: {fileID: 955934253}
-  player: {fileID: 316754233}
 --- !u!114 &922464987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2474,8 +2495,8 @@ RectTransform:
   - {fileID: 1174558491}
   - {fileID: 1836672204}
   - {fileID: 214444363}
-  - {fileID: 853743675}
-  - {fileID: 1848867830}
+  - {fileID: 469759558}
+  - {fileID: 1334605476}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2514,7 +2535,7 @@ GameObject:
   - component: {fileID: 1260881981}
   - component: {fileID: 1260881983}
   m_Layer: 0
-  m_Name: PedalBlue
+  m_Name: Paddle - Blue
   m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2784,6 +2805,57 @@ MonoBehaviour:
   - {fileID: 6652050553659263977, guid: 481f5209386d14e429456eabc27a5153, type: 3}
   - {fileID: 2640528118368067762, guid: 1f26b7781ed8649debbd751a1bcc89f2, type: 3}
   spawnRate: 5
+--- !u!1 &1334605475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1334605476}
+  - component: {fileID: 1334605477}
+  m_Layer: 5
+  m_Name: HealthBar - Red
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1334605476
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334605475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1848867830}
+  m_Father: {fileID: 1203876902}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1334605477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334605475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33e583bb372a8104a861249ffd296842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 955934253}
+  player: {fileID: 316754233}
 --- !u!1 &1431194132
 GameObject:
   m_ObjectHideFlags: 0
@@ -3637,7 +3709,7 @@ GameObject:
   - component: {fileID: 1792584759}
   - component: {fileID: 1792584761}
   m_Layer: 0
-  m_Name: Border - blue side
+  m_Name: Border - Blue
   m_TagString: PlayerBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3996,17 +4068,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848867829}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -120}
-  m_LocalScale: {x: 0.9999891, y: 0.9999885, z: 0.99998885}
+  m_LocalPosition: {x: 0, y: 0, z: -120.00004}
+  m_LocalScale: {x: 0.9999898, y: 0.9999885, z: 0.9999896}
   m_Children:
   - {fileID: 955934252}
-  m_Father: {fileID: 1203876902}
-  m_RootOrder: 6
+  m_Father: {fileID: 1334605476}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -99, y: 114}
-  m_SizeDelta: {x: -1026, y: -314}
+  m_AnchoredPosition: {x: -99, y: 113.99998}
+  m_SizeDelta: {x: 538, y: 536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1848867831
 MonoBehaviour:
@@ -4503,7 +4575,7 @@ GameObject:
   - component: {fileID: 2125645885}
   - component: {fileID: 2125645888}
   m_Layer: 0
-  m_Name: PedalRed
+  m_Name: Paddle - Red
   m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
