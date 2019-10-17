@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 2de4275a880203a47a6da48064918882, type: 3}
-  points: 1
+  points: -10
   type: 0
 --- !u!65 &9090149553051495528
 BoxCollider:

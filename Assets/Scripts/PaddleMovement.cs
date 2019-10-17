@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PedalMovement : MonoBehaviour
+public class PaddleMovement : MonoBehaviour
 {
     public float speed = 15f;
     // public ePlayer side;
@@ -16,8 +16,8 @@ public class PedalMovement : MonoBehaviour
     /// </summary>
     void Start()
     {
-        Pedal pedal = gameObject.GetComponent<Pedal>();
-        keyboardInputKey = pedal.player.keyboardInputKey;
+        Paddle paddle = gameObject.GetComponent<Paddle>();
+        keyboardInputKey = paddle.player.keyboardInputKey;
         isAxisReversed = false;
     }
     // Update is called once per frame

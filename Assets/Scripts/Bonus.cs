@@ -13,7 +13,7 @@ public class Bonus : MonoBehaviour
 {
     public AudioClip audioClip;
 
-    public int points = 1;
+    public int points = -5;
     public BonusType type;
 
 
@@ -28,7 +28,8 @@ public class Bonus : MonoBehaviour
     {
         if (other.gameObject.name == "Ball")
         {
-            AudioSource.PlayClipAtPoint(audioClip, Camera.main.transform.position);
+            Vector3 pos = Camera.main.transform.position;
+            AudioSource.PlayClipAtPoint(audioClip, pos);
 
             OnBonusTriggered(other.gameObject);
 
@@ -38,9 +39,12 @@ public class Bonus : MonoBehaviour
 
     public virtual void OnBonusTriggered(GameObject trigger)
     {
-        Game game = GameObject.FindGameObjectWithTag("Game").GetComponent<Game>();
         Ball ball = trigger.GetComponent<Ball>();
-        game.IncrementScore(ball.hitter, points);
+        Player player = ball.hitter;
+        if (player)
+        {
+            player.GetComponent<Health>().ModifyHealth(points);
+        }
     }
 
     public virtual void Instantiate(Vector3 position)
