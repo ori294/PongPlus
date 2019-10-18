@@ -11,7 +11,7 @@ public class BallBounce : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.collider.tag == "Pedal")
+        if (other.collider.tag == "Paddle")
         {
             // gets the padle length.
             padelLength = other.collider.GetComponent<Renderer>().bounds.size.z;
@@ -25,11 +25,11 @@ public class BallBounce : MonoBehaviour
             // calculating the new vector
             velZ = Mathf.Cos(newAngle);
             velX = Mathf.Sin(newAngle);
-            if (other.collider.name == "PedalBlue")
+            if (other.collider.name == "Paddle - Blue")
             {
                 newVec = new Vector3(velX, 0, -velZ);
             }
-            else if (other.collider.name == "PedalRed")
+            else if (other.collider.name == "Paddle - Red")
             {
                 newVec = new Vector3(-velX, 0, -velZ);    
             }
@@ -40,7 +40,7 @@ public class BallBounce : MonoBehaviour
 
     void OnCollisionExit(Collision other)
     {
-        if (other.collider.tag == "Pedal")
+        if (other.collider.tag == "Paddle")
         {
         currentSpeed = GetComponent<Ball>().speed;
         rb.velocity = Vector3.Normalize(newVec) * currentSpeed;    
