@@ -6,7 +6,8 @@ public class GameSpeedBoost : MonoBehaviour
 {
     public GameObject GameSpeedText;
     
-    void OnTriggerEnter(Collider other)
+
+    void OnCollisionEnter(Collision other)
     {
         //If the double speed is on - turn it off.
         if (GameSpeedText.activeSelf) {
@@ -20,6 +21,5 @@ public class GameSpeedBoost : MonoBehaviour
              Time.timeScale = 1.5f;
              transform.localScale -= new Vector3(0,0,3);
         }
-        
     }
 }

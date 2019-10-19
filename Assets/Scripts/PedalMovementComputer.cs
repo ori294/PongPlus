@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PaddleMovementComputer : MonoBehaviour
 {
-    public float speed = 0.19f; // the lesser the easier the CPU.
+    public float speed = 0.15f; // the lesser the easier the CPU.
     private Vector3 offSet;
     private Ball ball;
     private Vector3 origin;
@@ -23,6 +23,7 @@ public class PaddleMovementComputer : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        float CTS = Time.timeScale; //CTS - Current Time Scale
         Vector3 target = new Vector3(origin.x, origin.y, ball.transform.position.z );
 
         float currentSpeed = speed * (float)Math.Pow(1 - Math.Abs(ball.transform.position.x - transform.position.x) / Math.Abs(2 * transform.position.x), 2); // speed grows as the ball is closer to the paddle
@@ -32,7 +33,7 @@ public class PaddleMovementComputer : MonoBehaviour
 
         if (!didCollide || goingOppositeDirection) // has not hit the wall or going in opposite direction
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, currentSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, target, currentSpeed * CTS);
             previousPosition = transform.position;
             didCollide = false;
         }
