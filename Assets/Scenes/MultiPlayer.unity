@@ -3119,7 +3119,7 @@ MonoBehaviour:
   X: 7
   Z: 5
   bonuses:
-  - {fileID: 5330567726552373893, guid: d0ff8377437f9174c96e3c6e24d1ded6, type: 3}
+  - {fileID: 9160962418532444319, guid: d0ff8377437f9174c96e3c6e24d1ded6, type: 3}
   - {fileID: 671656101906272923, guid: 8b3bab2c0454b9a4f8fa6bbb48d49d31, type: 3}
   - {fileID: 2640528118368067762, guid: 1f26b7781ed8649debbd751a1bcc89f2, type: 3}
   spawnRate: 5

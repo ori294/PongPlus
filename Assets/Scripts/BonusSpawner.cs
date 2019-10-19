@@ -27,7 +27,7 @@ public class BonusSpawner : MonoBehaviour
         if (Time.time > nextSpawn)
         {
             Random.InitState(System.DateTime.Now.Millisecond);
-            whatToSpawn = Random.Range(1, bonuses.Count);
+            whatToSpawn = Random.Range(0, bonuses.Count);
             Bonus bonus = bonuses[whatToSpawn];
             spawnPos = new Vector3(Random.Range(-X, X), 1, Random.Range(-Z, Z));
             bonus.Instantiate(spawnPos);
