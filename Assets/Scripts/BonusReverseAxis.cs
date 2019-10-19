@@ -6,7 +6,7 @@ public class BonusReverseAxis : MonoBehaviour
 {
     public GameObject AxisReversedText;
     
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
         //Get all the paddles in the game
         GameObject[] paddleGameObjects = GameObject.FindGameObjectsWithTag("Paddle");
