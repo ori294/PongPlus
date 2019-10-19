@@ -12,7 +12,7 @@ public class Ball : MonoBehaviour
     public Vector3 initialImpulse = new Vector3(10, 0, 0);
     public Player hitter { get; private set; }
     public GameObject Flame;
-    public int defaultPoints = -2;
+    public int defaultPoints = -10;
     public int points;
 
     // Start is called before the first frame update
@@ -21,12 +21,12 @@ public class Ball : MonoBehaviour
         points = defaultPoints;
         speed = 10; //setting the speed
         Vector2 randomValues = UnityEngine.Random.insideUnitCircle; //generetes random X Y
-        while (randomValues.y < 0.3)
+        /*while (randomValues.y < 0.3)
         {
             Debug.Log("rolled " + randomValues.y + " for ball's new z - rerolling");
             randomValues = UnityEngine.Random.insideUnitCircle; //prevent the ball from moving too vertical and not towards the players
-        }
-        Vector3 startVel = new Vector3(randomValues.x, 0, randomValues.y); //creates a vector3 from the random values (x<-x, y<-0, z<-y)
+        }*/
+        Vector3 startVel = new Vector3(randomValues.x, 0, randomValues.y * randomValues.x); //creates a vector3 from the random values (x<-x, y<-0, z<-y)
         GetComponent<Rigidbody>().AddForce(startVel.normalized * speed, ForceMode.Impulse);
     }
 
@@ -67,12 +67,12 @@ public class Ball : MonoBehaviour
         GetComponent<Rigidbody>().velocity = Vector3.zero; //stopping the ball
         speed = 10; //resetting the requested speed to normal
         Vector2 randomValues = UnityEngine.Random.insideUnitCircle; //generetes random X Y
-        while (randomValues.y < 0.3)
+        /*while (randomValues.y < 0.3)
         {
             Debug.Log("rolled " + randomValues.y + " for ball's new z - rerolling");
             randomValues = UnityEngine.Random.insideUnitCircle; //prevent the ball from moving too vertical and not towards the players
-        }
-        Vector3 startVel = new Vector3(randomValues.x, 0, randomValues.y); //creates a vector3 from the random values (x<-x, y<-0, z<-y)
+        }*/
+        Vector3 startVel = new Vector3(randomValues.x, 0, randomValues.y * randomValues.x); //creates a vector3 from the random values (x<-x, y<-0, z<-y)
         GetComponent<Rigidbody>().AddForce(startVel.normalized * speed, ForceMode.Impulse);
     }
 
