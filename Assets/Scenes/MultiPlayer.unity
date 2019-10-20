@@ -488,7 +488,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Axis Reversed
+  m_text: Axis Inverted
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -5258,6 +5258,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1203876902}
     m_Modifications:
+    - target: {fileID: 6874358819444915900, guid: a202a345615e08849aeff4bc88be09e9,
+        type: 3}
+      propertyPath: m_text
+      value: Axis Inverted
+      objectReference: {fileID: 0}
     - target: {fileID: 6874358820088718198, guid: a202a345615e08849aeff4bc88be09e9,
         type: 3}
       propertyPath: m_Name
