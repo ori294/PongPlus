@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PaddleMovementComputer : MonoBehaviour
 {
-    public float speed = 0.15f; // the lesser the easier the CPU.
+    public float speed = 0.14f; // the lesser the easier the CPU.
     private Vector3 offSet;
     private Ball ball;
     private Vector3 origin;

@@ -19,7 +19,6 @@ public class InGameUI : MonoBehaviour
     public void Pause() 
     {
         pauseMenuUI.SetActive(true);
-        scoreUI.SetActive(false);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
@@ -27,7 +26,6 @@ public class InGameUI : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        scoreUI.SetActive(true);
         Time.timeScale = defaultTimeScale;
         GameIsPaused = false;
     }
