@@ -20,6 +20,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Controls");
     }
 
+    public void VoiceGame() {
+        Debug.Log("Going to VoiceControlledGame");
+        SceneManager.LoadScene("VoiceControlGame");
+    }
+
     public void ExitGame() {
         Debug.Log("Quitting");
         Application.Quit();
