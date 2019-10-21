@@ -1264,7 +1264,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Special blocks:\n     will haste the game speed\n     will invert your
-    controls (up is down)\n     will cause the ball to bounce harder"
+    controls\n     will bounce the ball"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
@@ -1333,10 +1333,10 @@ MonoBehaviour:
   m_margin: {x: 154.94293, y: -77.5163, z: -429.56848, w: -83.33227}
   m_textInfo:
     textComponent: {fileID: 678868495}
-    characterCount: 132
+    characterCount: 103
     spriteCount: 0
-    spaceCount: 35
-    wordCount: 21
+    spaceCount: 29
+    wordCount: 15
     linkCount: 0
     lineCount: 4
     pageCount: 1
