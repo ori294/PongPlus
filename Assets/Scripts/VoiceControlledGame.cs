@@ -15,7 +15,7 @@ public class VoiceControlledGame : MonoBehaviour
         Debug.Log("Creating game...");
         // create players
         numPlayers = Math.Max(1, numPlayers);
-        Time.timeScale = 0.4f;
+        Time.timeScale = 0.6f;
 
         // assign players to paddles and borders
         GameObject[] playerGameObjects = GameObject.FindGameObjectsWithTag("Player");
@@ -33,7 +33,7 @@ public class VoiceControlledGame : MonoBehaviour
             {
                 player.mode = PlayerMode.Human;
                 //paddleGameObject.AddComponent<PaddleMovement>();
-                paddleGameObject.AddComponent<PedalMovementSound>();
+                //paddleGameObject.AddComponent<PedalMovementSound>();
                 //PaddleMovement paddleMovement = paddleGameObject.GetComponent<PaddleMovement>();
                 // paddleMovement.keyboardInputKey = player.keyboardInputKey;
                 Debug.Log("Assign human player #" + i.ToString());
