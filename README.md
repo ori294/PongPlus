@@ -6,7 +6,9 @@
 2. [Sign up](http://www.github.com) to github
 
 
-<iframe src="https://i.simmer.io/@ori294/pongplusplus" style="width:1920px;height:1080px;border:0"></iframe>
+## Wanna play?
+You can play the game on SIMMER.IO:
+https://simmer.io/@ori294/pongplusplus
 
 ## Install
 
